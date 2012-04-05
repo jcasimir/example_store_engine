@@ -23,5 +23,5 @@ group :development, :test do
   gem 'launchy'
   gem 'guard'
   gem 'guard-rspec'
-  gem 'growl_notify'
+  gem 'growl'
 end

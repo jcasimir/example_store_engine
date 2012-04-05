@@ -1,6 +1,9 @@
 StoreEngine::Application.routes.draw do
-  root to: "products#index"
   
+  root to: "products#index"
+
+  resource :cart, :only => [:show, :update]
+
   resources :products
 
   # The priority is based upon order of creation:
