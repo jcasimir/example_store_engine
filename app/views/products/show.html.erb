@@ -2,19 +2,19 @@
 
 <p>
   <b>Title:</b>
-  <%= @product.title %>
+  <%= product.title %>
 </p>
 
 <p>
   <b>Description:</b>
-  <%= @product.description %>
+  <%= product.description %>
 </p>
 
 <p>
   <b>Price:</b>
-  <%= @product.price %>
+  <%= product.price %>
 </p>
 
 
-<%= link_to 'add to cart', cart_items_path(:product_id => @product), :method => :post %> |
+<%= link_to 'add to cart', cart_items_path(:product_id => product), :method => :post %> |
 <%= link_to 'Back', products_path %>
