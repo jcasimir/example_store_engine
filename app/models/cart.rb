@@ -1,6 +1,6 @@
 class Cart < ActiveRecord::Base
-  has_many :cart_items
-  has_many :products,  :through => :cart_items
+  has_many :items,     :class_name => :CartItem
+  has_many :products,  :through    => :items
 
   def add_or_increment_by_product_id(product_id)
     if product_ids.include?(product_id.to_i)      
@@ -11,18 +11,14 @@ class Cart < ActiveRecord::Base
   end
 
   def increment_quantity_for(product_id)
-    cart_item = cart_items.find_by_product_id(product_id)
-    cart_item.quantity += 1
-    cart_item.save
-    return cart_item.quantity
-  end
-
-  def items
-    products
+    item = items.find_by_product_id(product_id)
+    item.quantity += 1
+    item.save
+    return item.quantity
   end
 
   def total
-    cart_items.sum{|i| i.total }
+    items.sum{|i| i.total }
   end
 
   # Eventually, we'll want to use CartItems instead of

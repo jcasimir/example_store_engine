@@ -10,9 +10,9 @@ describe Cart do
       before(:each) { products.each {|p|cart.add_item(p)} }
 
       it "returns the items" do
-        cart.items.count.should == products.count
+        cart.products.count.should == products.count
         products.each do |p|
-          cart.items.should include(p)
+          cart.products.should include(p)
         end
       end
     end

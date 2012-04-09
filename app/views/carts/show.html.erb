@@ -1,11 +1,11 @@
 <h1>Your Cart</h1>
 <div id="cart">
   <table>
-    <% cart.cart_items.each do |cart_item| %>
+    <% cart.items.each do |item| %>
       <tr>
-        <td><%= cart_item.title %></td>
-        <td><%= cart_item.quantity %></td>
-        <td><%= cart_item.total %></td>
+        <td><%= item.title %></td>
+        <td><%= item.quantity %></td>
+        <td><%= item.total %></td>
       </tr>
     <% end %>
     <tr>
