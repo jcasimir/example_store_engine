@@ -16,5 +16,5 @@
 </p>
 
 
-<%= link_to 'add to cart', cart_path(:product_id => @product), :method => :put %> |
+<%= link_to 'add to cart', cart_items_path(:product_id => @product), :method => :post %> |
 <%= link_to 'Back', products_path %>

@@ -23,7 +23,22 @@ describe "Using the shopping cart" do
     end
 
     context "when I add multiple items to the cart" do
-      it "shows each item in the cart"
+      let(:second_product) { Fabricate(:product) }
+
+      before(:each) do
+        visit product_path(product)
+        click_link_or_button "add to cart"
+        
+        visit product_path(second_product)
+        click_link_or_button "add to cart"
+      end
+
+      it "shows each item in the cart" do
+        within("#cart") do
+          page.should have_content(product.title)
+          page.should have_content(second_product.title)
+        end
+      end
     end
   end
 
