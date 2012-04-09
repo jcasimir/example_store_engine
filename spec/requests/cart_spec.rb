@@ -1,6 +1,13 @@
 require "spec_helper"
 
 describe "Using the shopping cart" do
+  context "#show" do
+    it "shows the total" do
+      visit cart_path
+      page.should have_selector("#total")
+    end
+  end
+
   context "when I'm on a product page" do
     let(:product) { Fabricate(:product) }
     before(:each) { visit product_path(product) }

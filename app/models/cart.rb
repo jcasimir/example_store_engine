@@ -6,6 +6,10 @@ class Cart < ActiveRecord::Base
     products
   end
 
+  def total
+    items.sum{|i| i.price }
+  end
+
   # Eventually, we'll want to use CartItems instead of
   # using Products directly, because we will have more
   # functionality to put onto CartItem (such as remembering)

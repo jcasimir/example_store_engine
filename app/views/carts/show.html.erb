@@ -1,6 +1,17 @@
 <h1>Your Cart</h1>
 <div id="cart">
-  <% cart.items.each do |item| %>
-    <%= item.title %>
-  <% end %>
+  <table>
+    <% cart.items.each do |item| %>
+      <tr>
+        <td><%= item.title %></td>
+        <td><%= item.price %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td>ORDER TOTAL:</td>
+      <td id="total">
+        <%= cart.total %>
+      </td>
+    </tr>
+  </table>
 </div>
