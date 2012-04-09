@@ -2,7 +2,7 @@ StoreEngine::Application.routes.draw do
 
   root to: "products#index"
 
-  resource :cart, only: :show
+  resource :cart, only: [:show, :destroy]
 
   resources :cart_items, only: :create
 

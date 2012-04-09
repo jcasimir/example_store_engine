@@ -1,10 +1,11 @@
 <h1>Your Cart</h1>
 <div id="cart">
   <table>
-    <% cart.items.each do |item| %>
+    <% cart.cart_items.each do |cart_item| %>
       <tr>
-        <td><%= item.title %></td>
-        <td><%= item.price %></td>
+        <td><%= cart_item.title %></td>
+        <td><%= cart_item.quantity %></td>
+        <td><%= cart_item.total %></td>
       </tr>
     <% end %>
     <tr>
@@ -15,3 +16,5 @@
     </tr>
   </table>
 </div>
+
+<%= link_to "Destroy Cart", cart_path(cart), :method => :delete %>
