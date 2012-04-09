@@ -21,12 +21,12 @@ class Cart < ActiveRecord::Base
     items.sum{|i| i.total }
   end
 
-  def add_item(product)
+  def add_product(product)
     products << product
   end
 
   def add_product_by_id(product_id)
     product = Product.find(product_id)
-    add_item(product)
+    add_product(product)
   end
 end
