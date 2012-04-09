@@ -1,15 +1,19 @@
 class ApplicationController < ActionController::Base
-  before_filter :find_or_create_cart_from_session
-
   protect_from_forgery
 
-  private
+  helper_method :cart
 
-  def find_or_create_cart_from_session
+private
+
+  def cart
+    @cart ||= find_or_create_cart
+  end
+
+  def find_or_create_cart
     if session[:cart_id]
-      @cart = Cart.find_by_id(session[:cart_id])
-    end
-    @cart ||= Cart.create
-    session[:cart_id] = @cart.id
+      Cart.find_by_id(session[:cart_id])
+    else
+      Cart.create.tap{ |c| session[:cart_id] = c.id }      
+    end    
   end
 end
