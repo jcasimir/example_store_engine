@@ -7,14 +7,9 @@
       <th>Quantity</th>
       <th>Subtotal</th>
     </tr>
-    <% cart.items.by_product_name.each do |item| %>
-      <tr>
-        <td><%= item.title %></td>
-        <td><%= item.unit_price %></td>
-        <td><%= item.quantity %></td>
-        <td><%= item.total %></td>
-      </tr>
-    <% end %>
+    <%= render :partial => "item", 
+               :collection => cart.items.by_product_name %>
+
     <tr>
       <td>ORDER TOTAL:</td>
       <td id="total">
