@@ -9,4 +9,12 @@ class CartItem < ActiveRecord::Base
   def total
     product.price * quantity
   end
+
+  def unit_price
+    product.price
+  end
+
+  def self.by_product_name
+    joins(:product).order(:title)
+  end
 end
