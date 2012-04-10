@@ -1,0 +1,19 @@
+<div id="cart">
+  <table>
+    <tr>
+      <th>Product</th>
+      <th>Unit Price</th>
+      <th>Quantity</th>
+      <th>Subtotal</th>
+    </tr>
+    <%= render :partial    => "shared/item", 
+               :collection => shopping_cart.items.by_product_name %>
+
+    <tr>
+      <td>ORDER TOTAL:</td>
+      <td id="total">
+        <em><%= shopping_cart.total %></em>
+      </td>
+    </tr>
+  </table>
+</div>

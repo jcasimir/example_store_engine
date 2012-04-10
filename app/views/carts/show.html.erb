@@ -1,22 +1,5 @@
 <h1>Your Cart</h1>
-<div id="cart">
-  <table>
-    <tr>
-      <th>Product</th>
-      <th>Unit Price</th>
-      <th>Quantity</th>
-      <th>Subtotal</th>
-    </tr>
-    <%= render :partial => "item", 
-               :collection => cart.items.by_product_name %>
-
-    <tr>
-      <td>ORDER TOTAL:</td>
-      <td id="total">
-        <em><%= cart.total %></em>
-      </td>
-    </tr>
-  </table>
-</div>
+<%= render :partial => "shared/shopping_cart",
+           :locals  => {:shopping_cart => cart} %>
 
 <%= link_to "Destroy Cart", cart_path(cart), :method => :delete %>

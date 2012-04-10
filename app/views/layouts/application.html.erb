@@ -8,6 +8,10 @@
 </head>
 <body>
 
+  <div id="header">
+    <%= render :partial => "shared/shopping_cart",
+               :locals  => {:shopping_cart => cart} %>
+  </div>
 <%= yield %>
 
 </body>
