@@ -6,7 +6,7 @@
       <th>Quantity</th>
       <th>Subtotal</th>
     </tr>
-    <%= render :partial    => "shared/item", 
+    <%= render :partial    => "shopping_cart_item", 
                :collection => shopping_cart.items.by_product_name %>
 
     <tr>

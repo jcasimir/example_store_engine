@@ -1,5 +1,9 @@
+<% content_for :header do %>
+  You're viewing it!
+<% end %>
+
 <h1>Your Cart</h1>
-<%= render :partial => "shared/shopping_cart",
+<%= render :partial => "shopping_cart",
            :locals  => {:shopping_cart => cart} %>
 
 <%= link_to "Destroy Cart", cart_path(cart), :method => :delete %>

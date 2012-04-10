@@ -1,5 +1,7 @@
 class CartsController < ApplicationController
 
+  layout "cart"
+
   def show
     respond_to do |format|
       format.html

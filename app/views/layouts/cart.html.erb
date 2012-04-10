@@ -9,8 +9,7 @@
 <body>
 
   <div id="header">
-    <%= render :partial => "shopping_cart",
-               :locals  => {:shopping_cart => cart} %>
+    <%= yield :header %>
   </div>
 
   <%= yield %>
