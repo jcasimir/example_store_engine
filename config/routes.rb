@@ -6,7 +6,9 @@ StoreEngine::Application.routes.draw do
 
   resources :cart_items, only: :create
 
-  resources :products
+  resources :products do
+    resource :retirement, :only => :create
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

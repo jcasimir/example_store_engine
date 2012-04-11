@@ -3,6 +3,9 @@
   <td><%= product.description %></td>
   <td><%= number_to_currency(product.decimal_price) %></td>
   <td><%= link_to 'Show', product %></td>
+  <% if true %>
+    <td><%= link_to 'Retire', product_retirement_path(product), :method => :post %></td>
+  <% end %>
   <!--<td><%= link_to 'Edit', edit_product_path(product) %></td>
   <td><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>-->
 </tr>
